@@ -1,0 +1,23 @@
+{
+  "name": "marqetaapi",
+  "version": "1.0.0",
+  "description": "An Exploration of the Marqeta Developers' API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyderek/marqetaAPI.git"
+  },
+  "author": "Andy Nixon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyderek/marqetaAPI/issues"
+  },
+  "homepage": "https://github.com/andyderek/marqetaAPI#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node": "^11.12.0"
+  }
+}
