@@ -8,9 +8,6 @@ const options = {
   method: 'POST',
   headers: { 
     'Content-Type': "application/json"
-    // token: 'fromMyServer', 
-    // name: 'dispatched from my server', 
-    // start_date: '2019-04-05' 
   }
 };
 
@@ -30,7 +27,7 @@ newCardProduct.on('error', (e)=>{
 });
 
 // Write the Card Product
-newCardProduct.write(JSON.stringify({ token: 'FromModule', name: 'YES From Module', start_date: '2019-04-05' }));
+newCardProduct.write(JSON.stringify({ token: 'WHOA', name: 'AGAIN', start_date: '2019-04-05' }));
 
 newCardProduct.end();
 

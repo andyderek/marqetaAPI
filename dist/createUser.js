@@ -1,13 +1,15 @@
 const https = require('https');
 const secret = require('./doNotPush.js');
 
-const programFunding = {
-  name: 'Program Funding'
+const userProfile = {
+  first_name: 'Boo',
+  last_name: 'Davis',
+  active: true 
 }
 
 const options = { 
   hostname: 'shared-sandbox-api.marqeta.com',
-  path: '/v3/fundingsources/program',
+  path: '/v3/users',
   auth: secret.APPLICATION_TOKEN + ':' + secret.MASTER_ACCESS_TOKEN, 
   method: 'POST',
   headers: { 
@@ -15,7 +17,7 @@ const options = {
   }
 };
 
-const createFunding = https.request(options, (res)=>{
+const createUser = https.request(options, (res)=>{
   console.log('Status Code: ', res.statusCode);
   console.log('headers: ', res.headers);
 
@@ -29,7 +31,7 @@ const createFunding = https.request(options, (res)=>{
 
 });
 
-createFunding.write(JSON.stringify(programFunding));
-createFunding.end();
+createUser.write(JSON.stringify(userProfile));
+createUser.end();
 
-module.exports = createFunding;
+module.exports = createUser;
