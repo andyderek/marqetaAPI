@@ -1,0 +1,24 @@
+.userProfile {
+  float: left;
+  margin: 20px;
+}
+
+.cardProfile {
+  float: left;
+  margin: 20px;
+}
+
+#creditCard {
+  background: #A58CB6;
+  border-radius: 20px;
+  width: 370.7px;
+  height: 233.75px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#cardHolderName {
+  margin-top: 178px;
+  margin-left: 18px;
+  font-size: 15px;
+}
