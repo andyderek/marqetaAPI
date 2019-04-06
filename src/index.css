@@ -1,50 +1,34 @@
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+.userProfile {
+  float: left;
   margin: 20px;
 }
 
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
+.cardProfile {
   float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
+  margin: 20px;
 }
 
-.square:focus {
-  outline: none;
+#creditCard {
+  background: #A58CB6;
+  border-radius: 20px;
+  width: 370.7px;
+  height: 233.75px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+#cardHolderName {
+  margin-top: 178px;
+  margin-left: 18px;
+  font-size: 15px;
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
+/*These are CSS Classes for CSSTransitionGroup*/
+.example-appear {
+  opacity: 0.01;
 }
 
-.game-info {
-  margin-left: 20px;
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
 }
