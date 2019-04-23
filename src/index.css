@@ -6,6 +6,7 @@
 .cardProfile {
   float: left;
   margin: 20px;
+  box-sizing: border-box;
 }
 
 #creditCard {
@@ -20,7 +21,16 @@
 #cardHolderName {
   margin-top: 178px;
   margin-left: 18px;
+  /*font-family: "Lucida Sans Typewriter", monospace; */
+  /*font-family: Consolas, monospace;*/
+  font-family: AndaleMono, monospace;
+  /*font-family: "Lucida Console", Courier, monospace;*/
+  /*font-family: FreeMono, monospace;*/
+  font-stretch: ultra-condensed;
   font-size: 15px;
+  color: #C0C0C0;
+  text-shadow: 2px 2px #808080;
+  letter-spacing: 1px;
 }
 
 /*These are CSS Classes for CSSTransitionGroup*/

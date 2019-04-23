@@ -1,11 +1,8 @@
 const https = require('https');
 const secret = require('./doNotPush.js');
 
-const userProfile = {
-  first_name: 'Boo',
-  last_name: 'Davis',
-  active: true 
-}
+
+function createUserRequest(dog, dog2){
 
 const options = { 
   hostname: 'shared-sandbox-api.marqeta.com',
@@ -17,21 +14,27 @@ const options = {
   }
 };
 
-const createUser = https.request(options, (res)=>{
-  console.log('Status Code: ', res.statusCode);
-  console.log('headers: ', res.headers);
+const createUser = https.request(options, (res2)=>{
+  console.log('Status Code: ', res2.statusCode);
+  console.log('headers: ', res2.headers);
 
-  res.on('data', (d)=>{
+  let returnData = '';
+
+  res2.on('data', (d)=>{
     process.stdout.write(d);
+    returnData += d; 
   });
 
-  res.on('end', () => {
+  res2.on('end', () => {
     console.log('No more data in response.');
+    dog2.send(returnData);
   });
 
 });
 
-createUser.write(JSON.stringify(userProfile));
+createUser.write(JSON.stringify(dog.body));
 createUser.end();
 
-module.exports = createUser;
+}
+
+module.exports = createUserRequest;

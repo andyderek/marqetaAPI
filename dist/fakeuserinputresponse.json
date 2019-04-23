@@ -1,0 +1,63 @@
+{
+  "authentication": {
+    "last_password_update_channel": "USER_CHANGE | USER_RESET",
+    "last_password_update_time": "yyyy-MM-ddTHH:mm:ssZ",
+    "email_verified": false,
+    "email_verified_time": "yyyy-MM-ddTHH:mm:ssZ"
+  },
+  "token": "36 chars max",
+  "active": false,
+  "honorific": "10 char max",
+  "gender": "F | M",
+  "first_name": "Andrew",
+  "middle_name": "40 char max",
+  "last_name": "Nixon",
+  "email": "255 char max",
+  "address1": "255 char max",
+  "address2": "255 char max",
+  "city": "40 char max",
+  "state": "2 char max",
+  "zip": "10 char max",
+  "postal_code": "10 char max",
+  "country": "40 char max",
+  "notes": "255 char max",
+  "phone": "255 char max",
+  "parent_token": "36 char max",
+  "uses_parent_account": false,
+  "ssn": "string",
+  "corporate_card_holder": false,
+  "passport_number": "string",
+  "id_card_number": "string",
+  "nationality": "string",
+  "company": "string",
+  "ip_address": "string",
+  "password": "string",
+  "created_time": "yyyy-MM-ddTHH:mm:ssZ",
+  "last_modified_time": "yyyy-MM-ddTHH:mm:ssZ",
+  "business_token": "string",
+  "metadata": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "account_holder_group_token": "string",
+  "status": "UNVERIFIED",
+  "identifications": [
+    {
+      "type": "SSN",
+      "value": "string",
+      "expiration_date": "yyyy-MM-dd | yyyy-MM-dd'T'HH:mm:ss.SSSZ | yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | EEE"
+    }
+  ],
+  "deposit_account": {
+    "token": "string",
+    "user_token": "string",
+    "business_token": "string",
+    "account_number": "string",
+    "routing_number": "string",
+    "allow_immediate_credit": false
+  },
+  "birth_date": "yyyy-MM-dd | yyyy-MM-dd'T'HH:mm:ss.SSSZ | yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | EEE",
+  "passport_expiration_date": "yyyy-MM-dd | yyyy-MM-dd'T'HH:mm:ss.SSSZ | yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | EEE",
+  "id_card_expiration_date": "yyyy-MM-dd | yyyy-MM-dd'T'HH:mm:ss.SSSZ | yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | EEE"
+}

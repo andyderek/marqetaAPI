@@ -1,6 +1,18 @@
 const https = require('https');
 const secret = require('./doNotPush.js')
+const cardProductCreator = require("./cardProductCreator.js")
 // %%%%%%%%%%%%% Marqeta Create Card Product %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+// %%%%%%%%%%%%%To populate API with Card Products for User to choose%%%%%%%%%%%%%%%
+const flyByNight = new cardProductCreator("2019-04-11", "Fly By Night Airlines");
+const redEyeAir = new cardProductCreator("2019-04-11", "Red Eye Air");
+const shopForBonus = new cardProductCreator("2019-04-14", "Shop For Bonuses")
+
+
+function CreateCardProduct(request, response){
+
 const options = { 
   hostname: 'shared-sandbox-api.marqeta.com',
   path: '/v3/cardproducts',
@@ -11,15 +23,22 @@ const options = {
   }
 };
 
+const newCardProduct = https.request(options, (res2)=>{
+  console.log('Status Code:', res2.statusCode);
+  console.log('headers: ', res2.headers);
 
+  let returnData = ''
 
-const newCardProduct = https.request(options, (res)=>{
-  console.log('Status Code:', res.statusCode);
-  console.log('headers: ', res.headers);
-
-  res.on('data', (d) =>{
+  res2.on('data', (d) =>{
     process.stdout.write(d);
+    returnData += d;
   });
+
+  res2.on('end', () => {
+    console.log('No more data in response.');
+    response.send(returnData);
+  });
+
 });
 
 newCardProduct.on('error', (e)=>{
@@ -27,10 +46,10 @@ newCardProduct.on('error', (e)=>{
 });
 
 // Write the Card Product
-newCardProduct.write(JSON.stringify({ token: 'WHOA', name: 'AGAIN', start_date: '2019-04-05' }));
+newCardProduct.write(JSON.stringify(request.body));
 
 newCardProduct.end();
+}
 
-
-module.exports = newCardProduct
+module.exports = { CreateCardProduct, flyByNight, redEyeAir, shopForBonus }
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

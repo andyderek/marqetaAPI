@@ -1,0 +1,127 @@
+{
+  "token" : "278503af-a1dc-4ac2-abff-dc80a41c581d",
+  "name" : "Red Eye Air",
+  "active" : true,
+  "start_date" : "2019-04-11",
+  "config" : {
+    "poi" : {
+      "other" : {
+        "allow" : true,
+        "card_presence_required" : false,
+        "cardholder_presence_required" : false
+      },
+      "ecommerce" : true,
+      "atm" : false
+    },
+    "transaction_controls" : {
+      "accepted_countries_token" : "accept_us_only",
+      "always_require_pin" : false,
+      "always_require_icc" : false,
+      "allow_gpa_auth" : true,
+      "require_card_not_present_card_security_code" : false,
+      "allow_mcc_group_authorization_controls" : true,
+      "allow_first_pin_set_via_financial_transaction" : false,
+      "ignore_card_suspended_state" : false,
+      "allow_chip_fallback" : true,
+      "allow_network_load" : false,
+      "allow_network_load_card_activation" : false,
+      "allow_quasi_cash" : false,
+      "enable_partial_auth_approval" : true,
+      "address_verification" : {
+        "av_messages" : {
+          "validate" : true,
+          "decline_on_address_number_mismatch" : false,
+          "decline_on_postal_code_mismatch" : true
+        },
+        "auth_messages" : {
+          "validate" : true,
+          "decline_on_address_number_mismatch" : false,
+          "decline_on_postal_code_mismatch" : false
+        }
+      }
+    },
+    "selective_auth" : {
+      "sa_mode" : 1,
+      "enable_regex_search_chain" : false,
+      "dmd_location_sensitivity" : 0
+    },
+    "special" : {
+      "merchant_on_boarding" : false
+    },
+    "card_life_cycle" : {
+      "activate_upon_issue" : true,
+      "expiration_offset" : {
+        "unit" : "YEARS",
+        "value" : 4
+      },
+      "card_service_code" : 101,
+      "update_expiration_upon_activation" : false
+    },
+    "clearing_and_settlement" : {
+      "overdraft_destination" : "GPA"
+    },
+    "jit_funding" : {
+      "paymentcard_funding_source" : {
+        "enabled" : false,
+        "refunds_destination" : ""
+      },
+      "programgateway_funding_source" : {
+        "enabled" : false,
+        "funding_source_token" : "",
+        "refunds_destination" : ""
+      },
+      "program_funding_source" : {
+        "enabled" : false,
+        "funding_source_token" : "",
+        "refunds_destination" : ""
+      }
+    },
+    "digital_wallet_tokenization" : {
+      "provisioning_controls" : {
+        "manual_entry" : {
+          "enabled" : false,
+          "address_verification" : {
+            "validate" : true
+          }
+        },
+        "wallet_provider_card_on_file" : {
+          "enabled" : false,
+          "address_verification" : {
+            "validate" : true
+          }
+        },
+        "in_app_provisioning" : {
+          "enabled" : false,
+          "address_verification" : {
+            "validate" : true
+          }
+        }
+      }
+    },
+    "fulfillment" : {
+      "shipping" : {
+        "return_address" : { },
+        "recipient_address" : { }
+      },
+      "card_personalization" : {
+        "text" : {
+          "name_line_1" : {
+            "value" : ""
+          }
+        }
+      },
+      "payment_instrument" : "VIRTUAL_PAN",
+      "package_id" : "0",
+      "all_zero_card_security_code" : false,
+      "bin_prefix" : "111111",
+      "bulk_ship" : false,
+      "pan_length" : "16",
+      "fulfillment_provider" : "PERFECTPLASTIC",
+      "allow_card_creation" : true,
+      "uppercase_name_lines" : true,
+      "enable_offline_pin" : false
+    }
+  },
+  "created_time" : "2019-04-18T19:43:45Z",
+  "last_modified_time" : "2019-04-18T19:43:45Z"
+}

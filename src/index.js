@@ -1,26 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CardProfile from './cardProfileComp.js';
-import { CSSTransitionGroup } from 'react-transition-group';
-import './index.css'
+import MainContain from './mainContain.js'
 
-class MainContain extends React.Component {
+class RenderContain extends React.Component {
   render(){
     return (
-            <CSSTransitionGroup
-              transitionName="example"
-              transitionAppear={true}
-              transitionAppearTimeout={500}
-              transitionEnter={false}
-              transitionLeave={false}>
-                <CardProfile />
-            </CSSTransitionGroup>
-        
+        <MainContain />
       )
   }
 };
 
 ReactDOM.render(
-    <MainContain />,
+    <RenderContain />,
     document.getElementById('root')
 );
