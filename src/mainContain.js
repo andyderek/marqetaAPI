@@ -26,6 +26,7 @@ class MainContain extends React.Component {
     this.userInput = this.userInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onNext = this.onNext.bind(this);
+    this.isUserCreated = this.isUserCreated.bind(this);
   }
 
 
@@ -56,7 +57,6 @@ class MainContain extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log("onSubmit",this.state.firstName)
     const postRequest = {first_name: this.state.firstName, last_name: this.state.lastName };
     Axios.post('/UserNameInput', postRequest)
       .then((res)=>{
@@ -66,7 +66,6 @@ class MainContain extends React.Component {
       console.log("ERROR:  ",err);
     })
     .then(()=>{
-      console.log("Hello, Something Happened")
     })
 
   }
@@ -78,12 +77,20 @@ class MainContain extends React.Component {
     console.log("onNext", this.state.CurrentCardProduct)
   } 
 
+  isUserCreated(){
+    if(this.state.userCreated){
+      return <CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} />
+    } else {
+      return <SignUpContainer userInput={this.userInput} handleSubmit={this.handleSubmit} />
+    }
+  }
+
   render(){
   return (
     <div>
+      {this.isUserCreated()}
       <CardContainer card={this.state} />
-      <SignUpContainer userInput={this.userInput} handleSubmit={this.handleSubmit} />
-      <CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} />
+     
     </div>
   )
   }
