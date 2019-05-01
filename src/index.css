@@ -3,10 +3,18 @@
   margin: 20px;
 }
 
-.cardProfile {
+/*.cardProfile {
   float: left;
   margin: 20px;
   box-sizing: border-box;
+}*/
+
+.userInput {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 #creditCard {
@@ -15,12 +23,23 @@
   width: 370.7px;
   height: 233.75px;
   box-sizing: border-box;
+  /*box-sizing: content-box;*/
   padding: 10px;
+  margin-top: 10px;
+  box-shadow: 1px 1px 10px 3px #3DCCCC;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 #cardHolderName {
-  margin-top: 178px;
+  /*margin-top: 178px;*/
+  margin-top: 128px;
   margin-left: 18px;
+  /*margin-right: 233.75px;*/
+  text-align: left;
   /*font-family: "Lucida Sans Typewriter", monospace; */
   /*font-family: Consolas, monospace;*/
   font-family: AndaleMono, monospace;
@@ -31,14 +50,63 @@
   color: #C0C0C0;
   text-shadow: 2px 2px #808080;
   letter-spacing: 1px;
+  /*position: absolute;*/
+
 }
 
-/*These are CSS Classes for CSSTransitionGroup*/
-.example-appear {
-  opacity: 0.01;
+.expiration {
+  margin-left: 100px;
+  /*positon: absolute;*/
+  display: inline-block;
 }
 
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
+#cardNumber {
+  display: inline-block;
+  font-size: 23px;
+  margin-left: 15px;
+}
+
+#wrapper {
+    float: left;
+    width: 500px;
+}
+
+#pod {
+  width: 500px;
+  /*height: 600px;*/
+  height: 100%;
+  box-shadow: 1px 1px 20px 3px #008080;
+  padding-top: 15px;
+  background: #6DF3F3;
+  border-radius: 10px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#signUp {
+/*  float: left;
+  clear: both;*/
+  width: 370.7px;
+  background: transparent;
+
+}
+
+input {
+  width: 75%;
+  border: none;
+  opacity: 0.5;
+}
+
+body {
+  background: #19A6A6;
+  position: relative;
+}
+
+button {
+  border: none;
+  border-radius: 0.9375rem;
 }

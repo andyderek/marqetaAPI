@@ -20,13 +20,14 @@ class MainContain extends React.Component {
         UserInfo: '',
         CardProducts: '',
         CurrentCardProduct: '',
-        CardCount: 0,
-      
+        CardCount: 1,
+        usersCard: ''
     };
     this.userInput = this.userInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onNext = this.onNext.bind(this);
     this.isUserCreated = this.isUserCreated.bind(this);
+    this.selectThisCard = this.selectThisCard.bind(this);
   }
 
 
@@ -49,7 +50,6 @@ class MainContain extends React.Component {
 
 
   userInput(event){
-    console.log("First Name: ", this.state.firstName , "Last Name: ", this.state.lastName)
     const name = event.target.name;
     const value = event.target.value;
     this.setState({[name]: value}); 
@@ -57,10 +57,11 @@ class MainContain extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
+
     const postRequest = {first_name: this.state.firstName, last_name: this.state.lastName };
     Axios.post('/UserNameInput', postRequest)
-      .then((res)=>{
-      this.setState({firstName: res.data.first_name.toUpperCase(), lastName: res.data.last_name.toUpperCase(), UserInfo: res.data, userCreated: true});
+    .then((res)=>{
+      this.setState({firstName: res.data.first_name.toUpperCase(), lastName: res.data.last_name.toUpperCase(), UserInfo: res.data, userCreated: true, CurrentCardProduct: this.state.CardProducts[0]});
     })
     .catch((err)=>{
       console.log("ERROR:  ",err);
@@ -70,28 +71,51 @@ class MainContain extends React.Component {
 
   }
 
-  onNext(){
-    console.log('Hello, World!',this.state.CardProducts)
+  selectThisCard(event){
+    event.preventDefault()
 
+    const tokens = {card_product_token: this.state.CurrentCardProduct.token, user_token: this.state.UserInfo.token}
+    Axios.post('/SelectCard', tokens)
+    .then((res)=>{
+      console.log(res);
+      this.setState({usersCard: res.data})
+    })
+    .catch((err)=>{
+      console.log("Card Select Error: ", err);
+    })
+    .then(()=>{
+      console.log("Select Card was pressed")
+    })
+  }
+
+  onNext(){
+    if(this.state.CardCount === (this.state.CardProducts.length-1)){
+      this.setState({CardCount: 0})
+    } else {
+      this.setState({CardCount: (this.state.CardCount + 1)})
+    }
     this.setState({CurrentCardProduct:this.state.CardProducts[this.state.CardCount]})
-    console.log("onNext", this.state.CurrentCardProduct)
   } 
 
   isUserCreated(){
     if(this.state.userCreated){
-      return <CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} />
+      return <CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} selectThisCard={this.selectThisCard} />
     } else {
-      return <SignUpContainer userInput={this.userInput} handleSubmit={this.handleSubmit} />
+      return <SignUpContainer handleSubmit={this.handleSubmit} />
     }
   }
 
+
+
   render(){
   return (
-    <div>
-      {this.isUserCreated()}
-      <CardContainer card={this.state} />
-     
+    <div id='pod'>
+    <div id='wrapper'>
+      <CardContainer card={this.state} /><br />
+      {this.isUserCreated()}  
     </div>
+    </div>
+
   )
   }
 }

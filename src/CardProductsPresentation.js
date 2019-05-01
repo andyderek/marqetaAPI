@@ -5,7 +5,11 @@ const CardProductsPresentation = (props) =>{
   let cardName = props.cardProducts.cardProducts.name ? props.cardProducts.cardProducts.name : '';
 
   return(
-    <div>{cardName}<button onClick={props.onNext}>{'Next'}</ button></div>
+    <div>
+    <div>{cardName}</div><br />
+    <button onClick={props.selectThisCard}>{'Select This Card'}</ button>
+    <button onClick={props.onNext}>{'Next Card'}</ button>
+    </div>
   )
 };
 

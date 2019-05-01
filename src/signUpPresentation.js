@@ -8,8 +8,8 @@ const SignUpPresentation = (props) =>{
 
     
   return(
-    <label>{labelNames[props.thename]}
-    <input name={props.name} onChange={props.handleChange} />
+    <label>{labelNames[props.thename] + '    '}
+    <input name={props.name} onChange={props.handleChange}  />
     </label>
   )
 };

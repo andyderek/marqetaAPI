@@ -4,10 +4,12 @@ const path = require('path');
 const bodyParser = require('body-parser')
 const createUserRequest = require('./createUser.js')
 const { CreateCardProduct, flyByNight, redEyeAir, shopForBonus } = require('./cardProductCreate.js')
+const createUsersCard = require('./createUsersCard');
 
 // To reduce the amount of API calls while creating layout
 const fakeUserInputResponse = require('./fakeUserInputResponse.json')
 const fakeCardProductData = require('./fakeCardProductData.json')
+const fakeUsersCardRes = require('./fakeUsersCardRes.json')
 
 app.use(bodyParser.json());
 
@@ -28,6 +30,13 @@ app.post('/CreateCardProduct', (req,res)=>{
 
   res.send(fakeCardProductData);
 
+})
+
+app.post('/SelectCard', (req, res)=>{
+    // uncomment for real api request
+  // createUsersCard(req, res);
+
+  res.send(fakeUsersCardRes);
 })
 
 

@@ -10,7 +10,7 @@ class CardProductsContainer extends React.Component {
 
   render(){
     return (
-      <CardProductsPresentation cardProducts={this.props} onNext={this.props.onNext}>
+      <CardProductsPresentation cardProducts={this.props} onNext={this.props.onNext} selectThisCard={this.props.selectThisCard}>
       </ CardProductsPresentation>
     )
   }

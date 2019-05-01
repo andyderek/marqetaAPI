@@ -1,0 +1,97 @@
+{
+  "created_time": "yyyy-MM-ddTHH:mm:ssZ",
+  "last_modified_time": "yyyy-MM-ddTHH:mm:ssZ",
+  "token": "36 char max",
+  "user_token": "36 char max",
+  "card_product_token": "36 char max",
+  "last_four": "true | false",
+  "pan": "111111______8768",
+  "expiration": "0423",
+  "expiration_time": "yyyy-MM-ddTHH:mm:ssZ",
+  "cvv_number": "string",
+  "chip_cvv_number": "string",
+  "barcode": "string",
+  "pin_is_set": false,
+  "state": "UNACTIVATED",
+  "state_reason": "string",
+  "fulfillment_status": "ISSUED",
+  "reissue_pan_from_card_token": "string",
+  "fulfillment": {
+    "shipping": {
+      "method": "FEDEX_EXPEDITED | FEDEX_REGULAR | UPS_EXPEDITED | UPS_REGULAR | USPS_EXPEDITED | USPS_REGULAR",
+      "return_address": {
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "address1": "string",
+        "address2": "string",
+        "city": "string",
+        "state": "string",
+        "zip": "string",
+        "postal_code": "string",
+        "country": "string",
+        "phone": "string"
+      },
+      "recipient_address": {
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "address1": "string",
+        "address2": "string",
+        "city": "string",
+        "state": "string",
+        "zip": "string",
+        "postal_code": "string",
+        "country": "string",
+        "phone": "string"
+      },
+      "care_of_line": "255 char max"
+    },
+    "card_personalization": {
+      "text": {
+        "name_line_1": {
+          "value": "string"
+        },
+        "name_line_2": {
+          "value": "string"
+        }
+      },
+      "images": {
+        "card": {
+          "name": "string",
+          "thermal_color": "string"
+        },
+        "carrier": {
+          "name": "string",
+          "message_1": "string"
+        },
+        "signature": {
+          "name": "string"
+        },
+        "carrier_return_window": {
+          "name": "string"
+        }
+      },
+      "carrier": {
+        "template_id": "string",
+        "logo_file": "string",
+        "logo_thumbnail_file": "string",
+        "message_file": "string",
+        "message_line": "string"
+      }
+    }
+  },
+  "bulk_issuance_token": "string",
+  "translate_pin_from_card_token": "string",
+  "activation_actions": {
+    "terminate_reissued_source_card": true,
+    "swap_digital_wallet_tokens_from_card_token": "36 char max"
+  },
+  "instrument_type": "PHYSICAL_MSR",
+  "expedite": false,
+  "metadata": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  }
+}
