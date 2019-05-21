@@ -9,10 +9,11 @@ const CardPresentation = (props) => {
 
   return (
   <div id='CreditCard'>
-  <div id='cardHolderName'>
-  <div id='cardNumber'>{cardNumber}</div><br/><br/>
-  <div className='expiration'>{expireDate}</div>
-  <br/><div>{userFirst} {userLast}</div></div>
+    <div id='cardHolderName'>
+      <div id='cardNumber'>{cardNumber}</div><br/><br/>
+      <div className='expiration'>{expireDate}</div><br/>
+      <div>{userFirst} {userLast}</div>
+    </div>
   </div>
   )
 }

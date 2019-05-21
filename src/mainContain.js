@@ -99,9 +99,9 @@ class MainContain extends React.Component {
 
   isUserCreated(){
     if(this.state.userCreated){
-      return <CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} selectThisCard={this.selectThisCard} />
+      return <div id='pod'><CardContainer card={this.state} /><br/><CardProductsContainer cardProducts={this.state.CurrentCardProduct} onNext={this.onNext} selectThisCard={this.selectThisCard} /></div>
     } else {
-      return <SignUpContainer handleSubmit={this.handleSubmit} />
+      return <div id='pod'><CardContainer card={this.state} /><SignUpContainer handleSubmit={this.handleSubmit} /></div>
     }
   }
 
@@ -109,13 +109,9 @@ class MainContain extends React.Component {
 
   render(){
   return (
-    <div id='pod'>
-    <div id='wrapper'>
-      <CardContainer card={this.state} /><br />
+    <div>
       {this.isUserCreated()}  
     </div>
-    </div>
-
   )
   }
 }

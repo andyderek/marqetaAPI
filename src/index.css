@@ -28,10 +28,17 @@
   margin-top: 10px;
   box-shadow: 1px 1px 10px 3px #3DCCCC;
   position: absolute;
+/*  top: 200px;
+  left: 50%;*/
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+#insidePod {
+ left: 50%; 
 }
 
 #cardHolderName {
@@ -51,7 +58,6 @@
   text-shadow: 2px 2px #808080;
   letter-spacing: 1px;
   /*position: absolute;*/
-
 }
 
 .expiration {
@@ -67,8 +73,11 @@
 }
 
 #wrapper {
-    float: left;
-    width: 500px;
+/*    float: left;
+    width: 500px;*/
+    position: relative;
+    top: 25%;
+    transform: translateY(-25%);
 }
 
 #pod {
@@ -87,13 +96,31 @@
   transform: translate(-50%, -50%);
 }
 
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 #signUp {
-/*  float: left;
-  clear: both;*/
   width: 370.7px;
   background: transparent;
-
+/*  margin: 0 auto;*/
+/*  top: 330px;
+  left: 14%;*/
+  top: 50%;
+  left: 70px;
+  position: absolute;
+  padding-top: 120;
 }
+
+/*#interFace {
+  width: 500px;
+  height: 385.67px;
+  top: 50%;
+  left: 50%;
+}*/
 
 input {
   width: 75%;
@@ -103,7 +130,7 @@ input {
 
 body {
   background: #19A6A6;
-  position: relative;
+  /*position: relative;*/
 }
 
 button {

@@ -10,7 +10,7 @@ class CardContainer extends React.Component {
 
   render(){
     return (
-      <CardPresentation card={this.props}></CardPresentation>
+      <CardPresentation card={this.props} />
       )
   }
 }
